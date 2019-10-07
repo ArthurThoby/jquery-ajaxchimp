@@ -56,14 +56,15 @@
             4: 'La parte de usuario de la dirección de correo electrónico no es válida (la parte antes de la @:)',
             5: 'Esta dirección de correo electrónico se ve falso o no válido. Por favor, introduce una dirección de correo electrónico real'
         },
+        // translation by Arthur Thoby
         'fr': {
-            'submit': 'Enregistrement en cours...',
+            'submit': 'Traitement en cours...',
             0: 'Nous vous avons envoyé un e-mail de confirmation',
-            1: 'S\'il vous plaît entrer une valeur',
+            1: 'Merci d\'indiquer une valeur',
             2: 'Une adresse e-mail doit contenir un seul @',
-            3: 'La partie domaine de l\'adresse e-mail n\'est pas valide (la partie après le @:)',
-            4: 'La partie nom d\'utilisateur de l\'adresse email n\'est pas valide (la partie avant le signe @:)',
-            5: 'Cette adresse e-mail semble faux ou non valides. S\'il vous plaît entrer une adresse email valide'
+            3: 'Le domaine de votre e-mail n\'est pas valide (la partie après le @)',
+            4: 'La première partie de votre e-mail n\'est pas valide (la partie avant le signe @:)',
+            5: 'Cette adresse e-mail semble fausse ou non valide. Merci d\'entrer une adresse email valide'
         }
     };
 })(jQuery);
