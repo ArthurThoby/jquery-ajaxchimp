@@ -77,14 +77,14 @@
             }
         },
         fr: {
-            submit: 'Enregistrement en cours...',
+            submit: 'Traitement en cours...',
             success: 'Nous vous avons envoyé un e-mail de confirmation',
             errors: {
-                1: 'S\'il vous plaît entrer une valeur',
+                1: 'Merci d\'indiquer une valeur',
                 2: 'Une adresse e-mail doit contenir un seul @',
-                3: 'La partie domaine de l\'adresse e-mail n\'est pas valide (la partie après le @: $1)',
-                4: 'La partie nom d\'utilisateur de l\'adresse email n\'est pas valide (la partie avant le signe @: $1)',
-                5: 'Cette adresse e-mail semble faux ou non valides. S\'il vous plaît entrer une adresse email valide'
+                3: 'Le domaine de votre e-mail n\'est pas valide (la partie après le @: $1)',
+                4: 'La première partie de votre email n\'est pas valide (la partie avant le signe @: $1)',
+                5: 'Cette adresse e-mail semble fausse ou non valide. Merci de renseigner une adresse email valide'
             }
         }
     };
