@@ -44,12 +44,12 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
     $.ajaxChimp = {
         regexPatterns: {
             success: /Please confirm by clicking on the link we just sent to (.+@.+)/,
-            submit: /Submitting.../,
+            submit: /Sending.../,
             error: {
                 1: /Please enter a value/,
                 2: /An email address must contain a single @/,
                 3: /The domain portion of the email address is invalid \(the portion after the @: (.+)\)/,
-                4: /The username portion of the email address is invalid \(the portion before the @: (.+)\)/,
+                4: /The username portion of the email address is invalid/,
                 5: /This email address looks fake or invalid. Please enter a real email address/,
                 6: /.+\#6592.+/,
                 7: /(.+@.+) is already subscribed to list (.+)\..+<a href.+/
@@ -57,16 +57,16 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
         },
         defaultTranslations: {
             en: {
-                success: 'Please confirm by clicking on the link we just sent to $1',
-                submit: 'Submitting...',
+                success: 'All done. You are registered. Speak soon',
+                submit: 'Sending...',
                 error: {
                     1: 'Please enter a value',
                     2: 'An email address must contain a single @',
                     3: 'The domain portion of the email address is invalid (after the @: $1)',
-                    4: 'The username portion of the email address is invalid (before the @: $1)',
+                    4: 'The username portion of the email address is invalid',
                     5: 'This email address looks fake or invalid. Please enter a real email address',
                     6: 'Too many subscribe attempts for this email address. Please try again in about 5 minutes.',
-                    7: '$1 is already subscribed to the list $2'
+                    7: '$1 is already subscribed to this list. Please use a different one'
                 }
             }
         },
@@ -77,8 +77,8 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
             successSelector: '#mce-success-response',
             token: null,
         },
-        successMessage: 'Please confirm by clicking on the link we just sent to ',
-        submitMessage: 'Submitting...',
+        successMessage: 'All done. You are registered. Speak soon',
+        submitMessage: 'Sending...',
         init: function (selector, options) {
             $(selector).ajaxChimp(options);
         }
