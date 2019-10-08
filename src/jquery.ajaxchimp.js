@@ -57,7 +57,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
         },
         defaultTranslations: {
             en: {
-                success: 'All done. You are registered. Speak soon',
+                success: 'All done. You are registered. Speak soon.',
                 submit: 'Sending...',
                 error: {
                     1: 'Please enter a value',
@@ -75,9 +75,14 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
             language: 'en',
             errorSelector: '#mce-error-response',
             successSelector: '#mce-success-response',
+            sendingSelector: '#mce-sending-notification',
+            validClass: 'valid',
+            errorClass: 'error',
+            showClass: 'show-feedback',
+            hideClass: 'hide-feedback',
             token: null,
         },
-        successMessage: 'All done. You are registered. Speak soon',
+        successMessage: 'All done. You are registered. Speak soon.',
         submitMessage: 'Sending...',
         init: function (selector, options) {
             $(selector).ajaxChimp(options);
@@ -169,6 +174,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
             var error_div = form.find(settings.errorSelector);
             var success_div = form.find(settings.successSelector);
+            var sending_div = form.find(settings.sendingSelector);
 
             // Convert url to jsonp url
             var url = settings.url.replace('/post?', '/post-json?').concat('&c=?');
@@ -188,18 +194,19 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                     dataType: 'jsonp'
                 }).done(function (data, textStatus, jqXHR) {
                     if (data.result === 'success') {
-                        email.removeClass('error').addClass('valid');
+                        email.removeClass(settings.errorClass).addClass(settings.validClass);
                         if (success_div.length !== 0) {
                             msg = $.ajaxChimp.getTranslation(
-                                ($.ajaxChimp.successMessage + request_data.EMAIL),
+                                ($.ajaxChimp.successMessage),
                                 settings.language,
                                 'success'
                             );
-                            error_div.text('').hide();
-                            success_div.text(msg).show(500);
+                            error_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
+                            sending_div.addClass(settings.hideClass).removeClass(settings.showClass);
+                            success_div.text(msg).addClass(settings.showClass).removeClass(settings.hideClass);
                         }
                     } else{
-                        email.removeClass('valid').addClass('error');
+                        email.removeClass(settings.errorClass).addClass(settings.validClass);
                         if (error_div.length !== 0) {
                             try {
                                 var parts = data.msg.split(' - ', 2);
@@ -213,8 +220,9 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                                 msg = data.msg;
                             }
                             msg = $.ajaxChimp.getTranslation(msg, settings.language, 'error');
-                            success_div.text('').hide();
-                            error_div.text(msg).show(500);
+                            success_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
+                            sending_div.addClass(settings.hideClass).removeClass(settings.showClass);
+                            error_div.text(msg).addClass(settings.showClass).removeClass(settings.hideClass);
                         }
                     }
                     deferred.resolve(data, textStatus, jqXHR, form);
@@ -230,8 +238,9 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                         settings.language,
                         'submit'
                     );
-                    error_div.text('').hide();
-                    success_div.text(submitMsg).show(500);
+                    error_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
+                    success_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
+                    sending_div.text(submitMsg).addClass(settings.showClass).removeClass(settings.hideClass);
                 }
             });
             return deferred;
