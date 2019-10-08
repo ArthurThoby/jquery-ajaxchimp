@@ -27,7 +27,7 @@
 
     $.ajaxChimp.translations = {
         fr: {
-            submit: 'Traitement en cours...',
+            submit: 'Envoi en cours...',
             success: 'Vous êtes inscrits, merci. A bientôt.',
             error: {
                 1: 'Merci d\'indiquer une valeur.',
