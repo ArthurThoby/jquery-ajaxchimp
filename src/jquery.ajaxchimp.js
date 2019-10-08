@@ -50,9 +50,10 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                 2: /An email address must contain a single @/,
                 3: /The domain portion of the email address is invalid \(the portion after the @: (.+)\)/,
                 4: /The username portion of the email address is invalid/,
-                5: /This email address looks fake or invalid. Please enter a real email address/,
-                6: /.+\#6592.+/,
-                7: /(.+@.+) is already subscribed to list (.+)\..+<a href.+/
+                5: /The username portion of the email address is empty/,
+                6: /This email address looks fake or invalid. Please enter a real email address/,
+                7: /.+\#6592.+/,
+                8: /(.+@.+) is already subscribed to list (.+)\..+<a href.+/
             }
         },
         defaultTranslations: {
@@ -60,13 +61,14 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                 success: 'All done. You are registered. Speak soon.',
                 submit: 'Sending...',
                 error: {
-                    1: 'Please enter a value',
-                    2: 'An email address must contain a single @',
-                    3: 'The domain portion of the email address is invalid (after the @: $1)',
-                    4: 'The username portion of the email address is invalid',
-                    5: 'This email address looks fake or invalid. Please enter a real email address',
-                    6: 'Too many subscribe attempts for this email address. Please try again in about 5 minutes.',
-                    7: '$1 is already subscribed to this list. Please use a different one'
+                    1: 'Please enter a value.',
+                    2: 'An email address must contain a single @.',
+                    3: 'The domain portion of the email address is invalid (after the @: $1).',
+                    4: 'The username portion of the email address is invalid.',
+                    5: 'The username portion of the email address is empty.',
+                    6: 'This email address looks fake or invalid. Please enter a real email address.',
+                    7: 'Too many subscribe attempts for this email address. Please try again in about 5 minutes.',
+                    8: '$1 is already subscribed to this list. Please use a different one.'
                 }
             }
         },
