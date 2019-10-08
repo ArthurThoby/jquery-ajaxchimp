@@ -35,7 +35,7 @@
                 3: 'Le domaine de votre e-mail n\'est pas valide (la partie après le @: $1)',
                 4: 'La première partie de votre email n\'est pas valide (la partie avant le signe @: $1)',
                 5: 'Cette adresse e-mail semble fausse ou non valide. Merci de renseigner une adresse email valide',
-                6: 'Vous avez fait trop de tentatives, merci de patienter 5 minutes puis rééessayez',
+                6: 'Vous avez fait trop de tentatives, merci de patienter 5 minutes puis réessayez',
                 7: '$1 est déjà utilisée, merci de fournir une autre adresse email'
             }
         }
