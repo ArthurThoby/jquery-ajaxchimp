@@ -38,13 +38,15 @@ $('form-selector').ajaxChimp();
 
 ## Error / Success messages
 
-If a label element is included in the form for the email input, then the success or error message will be displayed in it. A `valid` or `error` class will also be added accordingly.
+You can freely choose where error messages are displayed within the form by specyfying selectors in the options. You can further choose the `validClass` and `errorClass` for the email input and the `showClass` and `hideClass` for the responses divs (see below).
 
 #### Example Form
 Roughly the embedded signup form no styles markup with a couple additions.
 
 ```html
-<form action="https://YOUR-LIST.us20.list-manage.com/subscribe/post?u=SOME-ADDRESS&amp;id=ID" autocomplete="off" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"> <!-- leave form action in markup to act as no js fallback -->
+<form action="https://YOUR-LIST.us20.list-manage.com/subscribe/post?u=SOME-ADDRESS&amp;id=ID" autocomplete="off" method="post" 
+      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+            <!-- leave form action in markup to act as no js fallback -->
             <div id="mc_embed_signup_scroll">
               <div class="mc-field-group">
                   <label for="mce-EMAIL"><span class="screen-reader-text">Email Address</span></label>
@@ -68,6 +70,23 @@ $('#mc-embedded-subscribe-form').ajaxChimp();
 
 
 ## Options
+
+### Defaults
+Labels are self-explanatory.
+
+```js
+defaultOptions: {
+            language: 'en',
+            errorSelector: '#mce-error-response',
+            successSelector: '#mce-success-response',
+            sendingSelector: '#mce-sending-notification',
+            validClass: 'valid',
+            errorClass: 'error',
+            showClass: 'show-feedback',
+            hideClass: 'hide-feedback',
+            token: null,
+        }
+```
 
 ### Callbacks
 
