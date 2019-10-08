@@ -19,7 +19,7 @@
     //    1: 'Please enter a value',
     //    2: 'An email address must contain a single @',
     //    3: 'The domain portion of the email address is invalid (the portion after the @: $1 )',
-    //    4: 'The username portion of the email address is invalid (the portion before the @: $1 )',
+    //    4: 'The username portion of the email address is invalid',
     //    5: 'This email address looks fake or invalid. Please enter a real email address',
     //    6: 'Too many subscribe attempts for this email address. Please try again in about 5 minutes.',
     //    7: '$1 is already subscribed to list $2'
