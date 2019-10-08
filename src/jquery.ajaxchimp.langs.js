@@ -28,15 +28,16 @@
     $.ajaxChimp.translations = {
         fr: {
             submit: 'Traitement en cours...',
-            success: 'Nous vous avons envoyé un e-mail de confirmation',
+            success: 'Vous êtes inscrits, merci. A bientôt.',
             error: {
-                1: 'Merci d\'indiquer une valeur',
-                2: 'Une adresse e-mail doit contenir un seul @',
-                3: 'Le domaine de votre e-mail n\'est pas valide (la partie après le @: $1)',
-                4: 'La première partie de votre email n\'est pas valide (la partie avant le signe @: $1)',
-                5: 'Cette adresse e-mail semble fausse ou non valide. Merci de renseigner une adresse email valide',
-                6: 'Vous avez fait trop de tentatives, merci de patienter 5 minutes puis réessayez',
-                7: '$1 est déjà utilisée, merci de fournir une autre adresse email'
+                1: 'Merci d\'indiquer une valeur.',
+                2: 'Une adresse e-mail doit contenir un seul @.',
+                3: 'Le domaine de votre e-mail n\'est pas valide (la partie après le @: $1).',
+                4: 'La première partie de votre email n\'est pas valide.',
+                5: 'La première partie de votre email n\'est pas valide.',
+                6: 'Cette adresse e-mail semble fausse ou non valide. Merci de renseigner une adresse email valide',
+                7: 'Vous avez fait trop de tentatives, merci de patienter 5 minutes puis réessayez',
+                8: '$1 est déjà utilisée, merci de fournir une autre adresse email'
             }
         }
     };
