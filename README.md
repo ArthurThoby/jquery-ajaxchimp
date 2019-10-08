@@ -44,13 +44,16 @@ You can freely choose where error messages are displayed within the form by spec
 Roughly the embedded signup form no styles markup with a couple additions.
 
 ```html
-<form action="https://YOUR-LIST.us20.list-manage.com/subscribe/post?u=SOME-ADDRESS&amp;id=ID" autocomplete="off" method="post" 
-      id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+<form action="https://YOUR-LIST.us20.list-manage.com/subscribe/post?u=SOME-ADDRESS&amp;id=ID" autocomplete="off" 
+      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
             <!-- leave form action in markup to act as no js fallback -->
             <div id="mc_embed_signup_scroll">
               <div class="mc-field-group">
-                  <label for="mce-EMAIL"><span class="screen-reader-text">Email Address</span></label>
-                <input type="email" value="" placeholder="" name="EMAIL" class="email text-field-input" id="mce-EMAIL" minLenght="7" maxLength="100">
+                  <label for="mce-EMAIL">
+                        <span class="screen-reader-text">Email Address</span>
+                    </label>
+                <input type="email" value="" placeholder="" name="EMAIL" class="email text-field-input" 
+                       id="mce-EMAIL" minLenght="7" maxLength="100">
               </div>
               <div id="mce-responses">
                 <div class="response hide-feedback" id="mce-sending-notification"></div>
@@ -58,8 +61,11 @@ Roughly the embedded signup form no styles markup with a couple additions.
                 <div class="response hide-feedback" id="mce-success-response"></div>
               </div>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="SOME-NAME-GIVEN-BY-MC" tabindex="-1" value=""></div>
-              <div class="clear submit-button"><button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button"><span class="screen-reader-text">Valider</span></button></div>
+              <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="SOME-NAME-GIVEN-BY-MC" tabindex="-1" value=""></div>
+              <div class="clear submit-button">
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button">
+                          <span class="screen-reader-text">Valider</span></button></div>
             </div>
           </form>
 ```
