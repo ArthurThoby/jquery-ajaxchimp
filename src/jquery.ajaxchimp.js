@@ -43,7 +43,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
 
     $.ajaxChimp = {
         regexPatterns: {
-            success: /Please confirm by clicking on the link we just sent to (.+@.+)/,
+            success: /Thank you for subscribing!/, // depends on options (no confirmation, email confirmation or double opt-in)
             submit: /Sending.../,
             error: {
                 1: /Please enter a value/,
@@ -208,7 +208,7 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                             success_div.text(msg).addClass(settings.showClass).removeClass(settings.hideClass);
                         }
                     } else{
-                        email.removeClass(settings.errorClass).addClass(settings.validClass);
+                        email.removeClass(settings.validClass).addClass(settings.errorClass);
                         if (error_div.length !== 0) {
                             try {
                                 var parts = data.msg.split(' - ', 2);
