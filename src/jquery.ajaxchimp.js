@@ -82,6 +82,10 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
             errorClass: 'error',
             showClass: 'show-feedback',
             hideClass: 'hide-feedback',
+            successEvent: 'ajaxchimp--success',
+            errorEvent: 'ajaxchimp--error',
+            failEvent: 'ajaxchimp--fail',
+            alwaysEvent: 'ajaxchimp--always',
             token: null,
         },
         successMessage: 'All done. You are registered. Speak soon.',
@@ -206,6 +210,8 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                             error_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
                             sending_div.addClass(settings.hideClass).removeClass(settings.showClass);
                             success_div.text(msg).addClass(settings.showClass).removeClass(settings.hideClass);
+                            
+                            form.triggerHandler(settings.successEvent);
                         }
                     } else{
                         email.removeClass(settings.validClass).addClass(settings.errorClass);
@@ -225,10 +231,16 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                             success_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
                             sending_div.addClass(settings.hideClass).removeClass(settings.showClass);
                             error_div.text(msg).addClass(settings.showClass).removeClass(settings.hideClass);
+                            
+                            form.triggerHandler(settings.errorEvent);
                         }
                     }
                     deferred.resolve(data, textStatus, jqXHR, form);
+                    
                 }).fail(function (jqXHR, textStatus, errorThrown) {
+                    
+                    form.triggerHandler(settings.failEvent);
+                    
                     deferred.reject(jqXHR, textStatus, errorThrown, form);
                 });
 
@@ -244,6 +256,8 @@ For e.g. 'http://blahblah.us1.list-manage.com/subscribe/post-json?u=5afsdhfuhdsi
                     success_div.text('').addClass(settings.hideClass).removeClass(settings.showClass);
                     sending_div.text(submitMsg).addClass(settings.showClass).removeClass(settings.hideClass);
                 }
+                
+                form.triggerHandler(settings.alwaysEvent);
             });
             return deferred;
         });
